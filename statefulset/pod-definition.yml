@@ -1,0 +1,25 @@
+//pod-definition.yml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: myapp-pod
+  labels:
+    app: mysql
+spec:
+  containers:
+  - name: mysql
+    image: mysql
+  subdomain: mysql-h
+  hostname: mysql-pod
+  
+
+//If you add subdomain and hostname to the pod definition file then only it will create dns record for the pod
+
+//without hostname property, It won't create A name record for the individual pod. 
+Once you add hostname property then only it will create dns record for pod name as well
+  
+//In case pod pod definition -> head less service will acces pod by using "mysql-pod.mysql-h.default.svc.cluster.local"
+
+// In this case, Service metadat:name must match with the sub-domain of the pod
+
