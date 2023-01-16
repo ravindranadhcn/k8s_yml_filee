@@ -2,8 +2,10 @@
 to validate yml file in python 
 first install pip3 install pyyaml
 
+```python
 python -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < pod-definition.yml
+```
 
-
-
+```bash
 kubectl run redis --image=redis:alpine --labels="tier=db,type=in-memory" --dry-run=client -o yaml
+```
