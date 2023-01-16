@@ -28,7 +28,7 @@ status:
   
   
   
-  ##It will create pod and service as well
+  ## It will create pod and service as well
   
 ```bash
   kubectl run httpd --image=httpd:alpine --port=80 --expose
