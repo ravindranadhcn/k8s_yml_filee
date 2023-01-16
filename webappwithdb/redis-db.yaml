@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: redis
+  name: redis-db
+spec:
+  containers:
+  - env:
+    - name: REDIS_ROOT_PASSWORD
+      value: paswrd
+    image: redis:alpine
+    imagePullPolicy: IfNotPresent
+    name: redis
+    ports:
+    - containerPort: 6379
+      protocol: TCP
